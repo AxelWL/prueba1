@@ -1,10 +1,8 @@
  /*
-* ShanBot es una creación de shanduy
-* ShanBot no tiene ningun fin de lucro
-* shanduy se reserva todos los derechos de autor
-* © 2021 shanduy, INC.
+* Bot es una creación de AxelMQ
+* Este bot debe usars con fines educativos
+* © 2021 Axel, INC.SAC
 
-Cualquier copia que utilize mi ApiKey sera dado de baja
 
 - Que hay de nuevo?
 * Nada
@@ -78,9 +76,9 @@ const { levelmenu } = require('./src/levelmenu')
 /******CARGA DE ENTRADA VCARD******/
 const vcard = 'BEGIN:VCARD\n' // Tarjeta de contacto
             + 'VERSION:3.0\n' 
-            + 'FN:Shan\n' // Nombre
-            + 'ORG:Shanduy;\n' // Propietario
-            + 'TEL;type=CELL;type=VOICE;waid=593967689722:+593 96 768 9722\n' // ID de WhatsApp + número de teléfono
+            + 'FN:Axel\n' // Nombre
+            + 'ORG:Axel;\n' // Propietario
+            + 'TEL;type=CELL;type=VOICE;waid=51927769540:+51 927 769 540\n' // ID de WhatsApp + número de teléfono
             + 'END:VCARD'
 /******FIN DE ENTRADA VCARD******/
 
@@ -181,7 +179,7 @@ const getLevelingXp = (userId) => {
 //LEVEL FIN
 	
 function addMetadata(packname, author) {	
-	if (!packname) packname = 'ShanBot'; if (!author) author = 'shanduy';	
+	if (!packname) packname = 'Bot'; if (!author) author = 'Axel';	
 	author = author.replace(/[^a-zA-Z0-9]/g, '');	
 	let name = `${author}_${packname}`
 	if (fs.existsSync(`./${name}.exif`)) return `./${name}.exif`
@@ -248,7 +246,7 @@ async function starts() {
 		start('2', 'Estas desconectado')
 	})
 	client.on('open', () => {
-		success('2', 'Conectado by shanduy')
+		success('2', 'Conectado by Axel')
 	})
 	await client.connect({timeoutMs: 30*1000})
         fs.writeFileSync('./Nazwa.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
@@ -303,12 +301,12 @@ async function starts() {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: 'Calmao pa estoy procesando😎\n\n❗Por favor no hacer spam👏❗\n\n_*by shanduy*_',
+				wait: 'Calmao pa estoy procesando😎\n\n❗Por favor no hacer spam👏❗\n\n_*by Axel*_',
 				success: '✔️ Listo ✔️',
                                 levelon: '❬ ✅ ❭ *Level activado*',
 				leveloff: ' ❬ ✅ ❭  *Level desactivado*',
-				foto: 'Calmao estoy cambiando la foto del grupo\n\nPor favor no hacer spam👏\n\n_*by shanduy*_',
-				unir: 'Espere por favor 🕖\n\nEstoy tratando de unirlo\n\n*Recuerda, si no lo uno es por que el usuario tiene bloqueado la funcion para unirlo a grupos*\n\n_*by shanduy*_',
+				foto: 'Calmao estoy cambiando la foto del grupo\n\nPor favor no hacer spam👏\n\n_*by Axel*_',
+				unir: 'Espere por favor 🕖\n\nEstoy tratando de unirlo\n\n*Recuerda, si no lo uno es por que el usuario tiene bloqueado la funcion para unirlo a grupos*\n\n_*by Axel*_',
                                 levelnoton: '❬ ❎ ❭ *Level no esta activado*',
 				levelnol: '*Nivel* 0 ',
 				error: {
@@ -321,19 +319,19 @@ async function starts() {
 				only: {
 					group: '[❗] Este comando es solo para grupos',
 					ownerG: '[❗] Este comando solo puede ser utilizado por un admins del grupo',
-					ownerB: '[❗] Este comando solo lo usa ShanBot',
+					ownerB: '[❗] Este comando solo lo usa Bot',
 					admin: '[❗] Este comando solo puede ser utilizado por administradores del grupo',
 					Badmin: '[❗] Este comando solo se puede usar cuando el bot se convierte en administrador',
-                                        pegatina: 'Calma crack estoy haciendo tu sticker 👏\n\n*Recuerda los stickersgif son de 6 segundos*\n\n_*by shanduy*_',
-					attp: 'Calma crack estoy haciendo tu texto a sticker 👏\n\n*Esto puede demorar unos minutos*\n\n_*by shanduy*_',
-					imgs: 'Euu flaco 🥴\n\n*Convirtiendo tu Sticker a Imagen 🔄*\n\n_*by shanduy*_',
-					mpcancion: 'Calmaoooo estoy procesando 😎\n\n*Convirtiendo de MP4 a MP3 🔄*\n\n_*by shanduy*_',
-					mpa: 'Euu flaco 🥴\n\n*Estoy descargando tu cancion 🔄*\n\nAguarde un momento, por favor\n\n_*by shanduy*_',
-                                        mpv: 'Calma ✋🥸🤚\n\n*Estoy descargando tu video 🔄*\n\nAguarde un momento, por favor\n\n_*by shanduy*_',
-					insta: 'Calmao 😎\n\n*Estoy descargando tu post 🔄*\n\nAguarde un momento, por favor\n\n_*by shanduy*_',
-					musica: 'Calmao pa estoy bucando tu canción 😎\n\n*Recuerda colocar bien el nombre de la cancion o el link del video de youtube*\n\n*Si el comando *play no funciona utiliza el comando *play2*\n\nSi no envio tu musica checa que version tienes del bot con *version\n\n_*by shanduy*_',
-					musica2: 'Calmao pa estoy bucando tu canción 😎\n\n*Recuerda colocar bien el nombre de la cancion o el link del video de youtube*\n\n*Si el comando *play2 no funciona utiliza el comando *play*\n\nSi no envio tu musica checa que version tienes del bot con *version\n\n_*by shanduy*_',
-					daftarB: `「NO ESTAS REGISTRADO」\n\nPA NO APARECES EN MI BASE DE DATOS ✋🥸🤚\n\nPara poder usarme escribe el siguente comando\n\nComando: ${prefix}daftar Nombre\nEjemplo: ${prefix}daftar shanduy`,
+                                        pegatina: 'Calma crack estoy haciendo tu sticker 👏\n\n*Recuerda los stickersgif son de 6 segundos*\n\n_*by Axel*_',
+					attp: 'Calma crack estoy haciendo tu texto a sticker 👏\n\n*Esto puede demorar unos minutos*\n\n_*by Axel*_',
+					imgs: 'Euu flaco 🥴\n\n*Convirtiendo tu Sticker a Imagen 🔄*\n\n_*by Axel*_',
+					mpcancion: 'Calmaoooo estoy procesando 😎\n\n*Convirtiendo de MP4 a MP3 🔄*\n\n_*by Axel*_',
+					mpa: 'Euu flaco 🥴\n\n*Estoy descargando tu cancion 🔄*\n\nAguarde un momento, por favor\n\n_*by Axel*_',
+                                        mpv: 'Calma ✋🥸🤚\n\n*Estoy descargando tu video 🔄*\n\nAguarde un momento, por favor\n\n_*by Axel*_',
+					insta: 'Calmao 😎\n\n*Estoy descargando tu post 🔄*\n\nAguarde un momento, por favor\n\n_*by Axel*_',
+					musica: 'Calmao pa estoy bucando tu canción 😎\n\n*Recuerda colocar bien el nombre de la cancion o el link del video de youtube*\n\n*Si el comando *play no funciona utiliza el comando *play2*\n\nSi no envio tu musica checa que version tienes del bot con *version\n\n_*by Axel*_',
+					musica2: 'Calmao pa estoy bucando tu canción 😎\n\n*Recuerda colocar bien el nombre de la cancion o el link del video de youtube*\n\n*Si el comando *play2 no funciona utiliza el comando *play*\n\nSi no envio tu musica checa que version tienes del bot con *version\n\n_*by Axel*_',
+					daftarB: `「NO ESTAS REGISTRADO」\n\nPA NO APARECES EN MI BASE DE DATOS ✋🥸🤚\n\nPara poder usarme escribe el siguente comando\n\nComando: ${prefix}daftar Nombre\nEjemplo: ${prefix}daftar Axel`,
 				}
 			}
     			const apakah = ['Si','No']
@@ -583,7 +581,7 @@ if (budy.includes("https://m.facebook.com/")){
 
 /******ENTRADA FIN DE FUNCIONES******/
 			function addMetadata(packname, author) {	
-				if (!packname) packname = 'ShanBot'; if (!author) author = 'Shanduy';	
+				if (!packname) packname = Bot'; if (!author) author = 'Shanduy';	
 				author = author.replace(/[^a-zA-Z0-9]/g, '');	
 				let name = `${author}_${packname}`
 				if (fs.existsSync(`./src/stickers/${name}.exif`)) return `./src/stickers/${name}.exif`
@@ -765,7 +763,7 @@ reply('Hubo un error intentalo nuevamente :/')
 }
 break				
 											
-/******JUEGOS SHANDUY LA PUTA MADRE NO TE OLVIDES******/					
+/******JUEGOS BOT LA PUTA MADRE NO TE OLVIDES******/					
 					
 					
        				case 'wa.me':
@@ -781,13 +779,6 @@ break
 				reply(data.result)
 				break
 		
-	
-	case 'creador':
-	       client.sendMessage(from, {displayname: "Shan 🥸", vcard: vcard}, MessageType.contact, { quoted: mek})
-		client.sendMessage(from, 'Hola 👋 te saluda Shan, este es un mensaje predeterminado al igual que el audio.\n\nArriba esta mi contacto por si tienen algun problema con las descargas o yo que se.\nYo no soy dueño de este bot ni tampoco lo controlo, yo solo cree la base de datos y le doy mantenimiento.\nSi quieres unir este bot a un grupo o yo que se, habla con este numero.\nEl numero osea mi contacto de arriba no es un bot, si te dio pereza escuchar el audio gordito trolo.\nBueno disfruten del bot y si quieres me puedes seguir en instagram.\n\n*Mi instagram:* https://www.instagram.com/thepavos\n\n*Como instalar el bot:* https://www.youtube.com/watch?v=HxZYNgW9aI8\n\n_*by shanduy*_',MessageType.text, { quoted: mek} )
-                const none = fs.readFileSync('./mp3/shan.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                break
 	
 	
 	case 'x':
@@ -892,7 +883,7 @@ break
 						reply('')
 					} else {
 						for (let _ of anu) {
-							sendMess(_.jid, `*「 _*by shanduy*_ 」*\n\n${body.slice(4)}`)
+							sendMess(_.jid, `*「 _*by Axel*_ 」*\n\n${body.slice(4)}`)
 						}
 						reply('Transmisión exitosa')
 					}
@@ -1072,7 +1063,7 @@ break
 					break
 			        
 				
-				//FIN DE ANTILINK HECHO POR SHANDUY
+				//FIN DE ANTILINK HECHO POR AXELMQ
 				
 //ADMINISTRACION DE GRUPOS
 		                
@@ -1671,7 +1662,7 @@ break
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
 	if (budy.startsWith(`Te amo botsito uwu`)) {
-        const none = fs.readFileSync('./anishan/anime2.mp3');
+        const none = fs.readFileSync('./aniAxel/anime2.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
 	if (budy.startsWith(`Onichan`)) {
