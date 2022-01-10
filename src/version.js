@@ -1,10 +1,9 @@
 const version = (prefix, pushname) => {
     return `
-*ShanBot by shanduy*
+*Bot by axel*
 
 *Actualizado:* 07 de Enero del 2022
 *Versión actual:* 4.5
-*Ofrecida por:* shanduy™
 
 
 *INFORME*
@@ -28,7 +27,7 @@ https://www.youtube.com/watch?v=HxZYNgW9aI8
 https://www.instagram.com/thepavos
 
 
-_*by shanduy*_
+_*by axel*_
 `
 
 }
